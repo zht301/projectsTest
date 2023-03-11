@@ -1,0 +1,71 @@
+@import url('https://fonts.googleapis.com/css?family=Muli&display=swap');
+
+*{
+    box-sizing: border-box;
+    /* border-box 告诉浏览器：你想要设置的边框和内边距的值
+    是包含在 width 内的。也就是说，如果你将一个元素的 width 
+    设为 100px，那么这 100px 会包含它的 border 和 padding，
+    内容区的实际宽度是 width 减去 (border + padding) 的值。
+    大多数情况下，这使得我们更容易地设定一个元素的宽高。 */
+}
+body{
+    font-family: 'Muli', sans-serif;
+    display: flex;
+    /* 该元素的行为类似块级元素并且根据弹性盒模型布局它的内容。 */
+    align-items: center;
+    /* 垂直居中 */
+    justify-content: center;
+    /* 水平居中 */
+    height: 100vh;
+    /* overflow: hidden; */
+    margin: 0;
+}
+
+.container{
+    display: flex;
+    width: 90vw;
+}
+
+.panel{
+   background-size: cover;
+   /*缩放背景图片以完全覆盖背景区，可能背景图片部分看不见。*/
+   background-position: center;
+   /*设置背景图片的起始位置*/
+   height: 80vh;
+   border-radius: 50px;
+   -webkit-border-radius: 50px;
+   -moz-border-radius: 50px;
+   -ms-border-radius: 50px;
+   -o-border-radius: 50px;
+   color: #fff;
+   cursor: pointer;
+   /*鼠标变成手*/
+   flex: 0.5;
+   /*CSS设置flex项主尺寸的flex增长系数。*/
+   margin: 10px;
+   position: relative;
+   /*给文字进行定位*/
+   transition: all 700ms ease-in;
+   -webkit-transition: all 700ms ease-in;
+   -moz-transition: all 700ms ease-in;
+   -ms-transition: all 700ms ease-in;
+   -o-transition: all 700ms ease-in;
+}
+.panel h3{
+    font-size: 24px;
+    position: absolute;
+    bottom: 20px;
+    left: 20px;
+    margin: 0;
+    opacity: 0;
+    /* 字体变透明 */
+}
+
+.panel.active{
+    flex: 5;
+}
+
+.panel.active h3{
+    opacity: 1;
+    transition: opacity 0.3s ease-in 0.4s;
+}
